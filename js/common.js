@@ -69,7 +69,7 @@ $(document).ready(function() {
   // Class that is added to popup wrapper and background
   // make it unique to apply your CSS animations just to this exact popup
   mainClass: 'mfp-fade'
-});
+  });
 
   $(".portfolio-item").each(function(i) {
 	$(this).find("a").attr("href","#work_" + i);
