@@ -1,3 +1,4 @@
+/*
 $(function() {
 
 	// Custom JS
@@ -11,7 +12,7 @@ $(function() {
 	});
 
 });
-
+*/
 
 $(document).ready(function() {
 
