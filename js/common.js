@@ -60,6 +60,13 @@ $(document).ready(function() {
 
 });
 
+
+
+$(window).on('load', function(){
+$(".loaderInner").fadeOut();
+$(".loader").delay(400).fadeOut("slow");
+});
+
   ymaps.ready(init);
     var myMap, 
     myPlacemark;
@@ -77,9 +84,3 @@ $(document).ready(function() {
   
         myMap.geoObjects.add(myPlacemark);
         }
-
-$(window).on('load', function(){
-$(".loaderInner").fadeOut();
-$(".loader").delay(400).fadeOut("slow");
-});
-
