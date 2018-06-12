@@ -12,6 +12,10 @@ $(function() {
 
 });
 
+  ymaps.ready(init);
+    var myMap, 
+    myPlacemark;
+
 
 $(document).ready(function() {
 
@@ -58,20 +62,7 @@ $(document).ready(function() {
 	$(this).find(".portfolio-item-descr").attr("id","work_" + i);
 	});
 
-});
-
-
-
-$(window).on('load', function(){
-$(".loaderInner").fadeOut();
-$(".loader").delay(400).fadeOut("slow");
-});
-
-  ymaps.ready(init);
-    var myMap, 
-    myPlacemark;
-
-    function init(){ 
+      function init(){ 
       myMap = new ymaps.Map("map", {
         center: [55.76, 37.64],
         zoom: 7
@@ -84,3 +75,15 @@ $(".loader").delay(400).fadeOut("slow");
   
         myMap.geoObjects.add(myPlacemark);
         }
+
+});
+
+
+
+$(window).on('load', function(){
+$(".loaderInner").fadeOut();
+$(".loader").delay(400).fadeOut("slow");
+});
+
+
+
