@@ -10,11 +10,22 @@ $(function() {
 		heightDetect();
 	});
 
-});
 
-  ymaps.ready(init);
-    var myMap, 
-    myPlacemark;
+  //map
+    ymaps.ready(init);
+    var myMap,
+        myPlacemark;
+
+    function init(){     
+        myMap = new ymaps.Map("map", {
+            center: [55.76, 37.64],
+            zoom: 7
+        });
+
+        myMap.geoObjects.add(myPlacemark);
+    }
+
+});
 
 
 $(document).ready(function() {
@@ -62,7 +73,18 @@ $(document).ready(function() {
 	$(this).find(".portfolio-item-descr").attr("id","work_" + i);
 	});
 
-      function init(){ 
+});
+
+
+
+$(window).on('load', function(){
+$(".loaderInner").fadeOut();
+$(".loader").delay(400).fadeOut("slow");
+});
+
+
+
+    function init(){ 
       myMap = new ymaps.Map("map", {
         center: [55.76, 37.64],
         zoom: 7
@@ -75,15 +97,3 @@ $(document).ready(function() {
   
         myMap.geoObjects.add(myPlacemark);
         }
-
-});
-
-
-
-$(window).on('load', function(){
-$(".loaderInner").fadeOut();
-$(".loader").delay(400).fadeOut("slow");
-});
-
-
-
