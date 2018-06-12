@@ -10,21 +10,6 @@ $(function() {
 		heightDetect();
 	});
 
-
-  //map
-    ymaps.ready(init);
-    var myMap,
-        myPlacemark;
-
-    function init(){     
-        myMap = new ymaps.Map("map", {
-            center: [55.76, 37.64],
-            zoom: 7
-        });
-
-        myMap.geoObjects.add(myPlacemark);
-    }
-
 });
 
 
@@ -73,6 +58,26 @@ $(document).ready(function() {
 	$(this).find(".portfolio-item-descr").attr("id","work_" + i);
 	});
 
+    //map
+    ymaps.ready(init);
+    var myMap,
+        myPlacemark;
+
+    function init(){     
+        myMap = new ymaps.Map("map", {
+            center: [53.865372, 27.511220],
+            zoom: 13
+        });
+
+        myPlacemark = new ymaps.Placemark([53.865372, 27.511220], { 
+        	hintContent: 'Мы здесь!' },
+                {
+                    preset: "twirl#redStretchyIcon"
+                });
+
+        myMap.geoObjects.add(myPlacemark);
+    }
+
 });
 
 
@@ -82,18 +87,3 @@ $(".loaderInner").fadeOut();
 $(".loader").delay(400).fadeOut("slow");
 });
 
-
-
-    function init(){ 
-      myMap = new ymaps.Map("map", {
-        center: [55.76, 37.64],
-        zoom: 7
-        }); 
-  
-        myPlacemark = new ymaps.Placemark([55.76, 37.64], {
-          hintContent: 'Москва!',
-          balloonContent: 'Столица России'
-          });
-  
-        myMap.geoObjects.add(myPlacemark);
-        }

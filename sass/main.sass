@@ -374,13 +374,17 @@ b, strong
 	text-align: center
 	line-height: 50px
 	position: fixed
+	&:hover
+		color: $text
 
-.mPS2id-highlight
-	background-color: $accent
-.top
+#menu
 	.mPS2id-highlight
-		display: none
-		background-color: transparent
+		background-color: $accent
+		transition: color 0.5s ease
+
+.top.mPS2id-highlight-first
+	display: none
+
 
 
 					
