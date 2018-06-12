@@ -1,0 +1,391 @@
+@import "vars"
+@import "fonts"
+@import "libs"
+
+::placeholder
+	color: #666
+
+::selection
+	background-color: $accent
+	color: #fff
+
+body
+	font-size: 16px
+	min-width: 320px
+	position: relative
+	line-height: 1.65
+	overflow-x: hidden
+	color: $text
+
+	input, textarea
+		border: #666 1px solid
+		outline: none
+		&:focus:required:invalid
+			border-color: red
+		&:required:valid
+			border-color: green
+
+
+section
+
+.container-fluid
+	padding-left: $gutter*2
+	padding-right: $gutter*2
+	padding-bottom: $gutter*5
+
+.row
+	margin-right: 0
+	margin-left: 0
+
+
+header
+	background-color: $gray
+
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6
+	
+.display-4
+	font-weight: 600
+				
+
+.heading
+	padding-bottom: 5%
+	padding-top: 5%
+	text-align: center
+	color: $text
+
+.btn
+	border-radius: 30px
+	//border-radius: 0
+	border-width: 3px
+	color: $accent
+	border-color: $accent
+	padding-right: $gutter*2
+	padding-left: $gutter*2
+
+	
+    //preloader Start
+
+.loader 
+	background: none repeat scroll 0 0 #ffffff
+	bottom: 0
+	height: 100%
+	left: 0
+	position: fixed
+	right: 0
+	top: 0
+	width: 100%
+	z-index: 9999
+	.loader_inner 
+		background-image: url("../img/out.gif")
+		background-repeat: no-repeat
+		background-size: cover
+		background-position: center center
+		background-color: #fff
+		height: 60px
+		width: 60px
+		margin-top: -30px
+		margin-left: -30px
+		left: 50%
+		top: 50%
+		position: absolute
+
+//preloader End
+
+.img-responsive
+	display: block
+	max-width: 100%
+	height: auto
+	&.img-width
+		width: 100%
+
+b, strong
+	font-weight: bold
+
+.nodecor, .nodecor:hover
+	text-decoration: none
+	color: $text
+
+.accent
+	color: $accent
+
+// Custom Sass
+
+//nav
+.menu
+	background-color: #fff
+	padding-bottom: 0
+.navbar
+	padding: 0
+
+//info Start
+.info
+	min-height: 620px
+	&-text
+		padding-top: 15rem
+		&-list
+			ul
+				font-size: 1.2rem
+				//letter-spacing: 2px
+				padding-top: $gutter
+				padding-bottom: $gutter
+				padding-left: $gutter
+	
+//advantages
+.advantages
+	padding: $gutter*3 0
+	&-item
+		padding-bottom: $gutter*2
+		&-bg
+			//background-color: $gray
+		&-text
+			//padding: 20px
+			position: relative
+		&-head
+			img
+				position: absolute
+				width: 40px
+				height: 40px
+			h4
+				padding-left: $gutter*3
+
+
+			
+				
+//equipment
+.equipment
+	padding: $gutter*15
+	color: #fff
+	h2
+		letter-spacing: 2px
+	.btn
+		margin: $gutter*3
+
+
+//timeline
+.timeline
+	padding: $gutter*2 0
+	+media-breakpoint-down(xs)
+		padding: $gutter*2 5%
+	&-item
+		position: relative
+		h4, p
+			position: relative
+			top: -$gutter
+		&::before
+			content: '●'
+			position: absolute
+			width: 1px
+			height: 100%
+			color: $text
+			background-color: $text
+			font-size: 40px
+			text-indent: -11px
+			line-height: 0
+		&:last-child
+			&::before
+				width: 0
+
+		&:nth-child(odd)
+			text-align: right
+			padding-right: 50+$gutter
+			.timeline-item-img
+				right: $gutter
+			&::before
+				right: 0
+			+media-breakpoint-down(xs)
+				text-align: left
+				padding-left: 50+$gutter
+				padding-right: 0
+				.timeline-item-img
+					left: $gutter
+				&::before
+					left: -1px
+
+		&:nth-child(even)
+			+make-col-offset(6)
+			padding-left: 50+$gutter
+			.timeline-item-img
+				left: $gutter
+			&::before
+				left: -1px
+			+media-breakpoint-down(xs)
+				+make-col-offset(0)
+		h4
+			line-height: 1.4
+			margin: 4px 0 0 0
+		p
+			display: block
+			font-size: 14px
+
+//material
+.material
+	background-color: $gray
+	.row
+		
+	&-item
+		text-align: center
+		border-right: 1px solid #fff
+		margin-bottom: $gutter*2
+		&:first-of-type
+			border-left: 1px solid #fff
+		img
+			width: 70%
+		&-cont
+			text-align: center
+	&-item:first-of-type
+
+//cost
+.cost
+	.table
+		i
+			color: $accent
+
+//portfolio
+.portfolio
+	color: #fff
+	ul
+		color: $text
+		text-align: center
+		li
+			display: inline-block
+			text-align: center
+			margin: 0 $gutter/2
+			cursor: pointer
+			line-height: 2
+			transition: color 0.5s ease
+			&.active
+				color: $accent
+			&:hover
+				color: $accent
+				//border-bottom: solid 1px $accent
+
+	&-item
+		position: relative
+		padding: 0
+		img
+			width: 100%
+		&-cont
+			position: absolute
+			top: 0
+			left: 0
+			width: 100%
+			height: 100%
+			background-color: rgba(0,0,0,.8)
+			text-align: center
+			padding-top: 25%
+			opacity: 0
+			transition: all .5s
+			&:hover
+				opacity: 1
+				padding-top: 20%
+		&-descr
+			background-color: #fff
+			max-width: 500px
+			margin: auto
+			padding: $gutter*2
+			position: relative
+			img
+				width: 100%
+
+//person
+.person
+	&-item
+		img
+			border-radius: $gutter*10
+			width: 50%
+
+//map
+.map
+	position: relative
+	.container-fluid
+		padding: 0
+		margin: 0
+		.row
+			height: 100%
+	&-cont
+		position: absolute
+		top: $gutter*8
+		left: $gutter
+		background-color: rgba(255, 255, 255, 1)
+		box-shadow: rgba(0, 0, 0, .3) 0px 1px 4px -1px
+		padding: $gutter
+		&-tel
+			padding-top: $gutter
+			padding-bottom: $gutter
+		&-time
+			h6
+				font-weight: 600
+
+#map
+	width: 100%
+	height: 620px
+
+//footer
+.footer
+	.container-fluid
+		.heading
+			h2
+				display: block
+				position: relative
+				margin-bottom: $gutter*2
+				&::after
+   					content: " "
+   					height: 2px
+   					width: 150px
+   					background-color: $text
+   					position: absolute
+   					left: 50%
+   					margin-left: -75px
+   					margin-top: 85px
+		.social
+			ul
+				margin-top: $gutter
+				li
+					display: inline-block
+					padding: 0 $gutter
+					a
+						transition: color 0.5s ease
+						&:hover
+							color: $accent
+		.copyright
+			background-color: #000
+			color: $gray
+			position: absolute;
+			width: 100%
+			bottom: 0
+			left: 0
+			height: 6rem
+			ul
+				margin: 0
+				li
+					display: inline-block
+					a
+						color: #fff
+						transition: color 0.5s ease
+						&:hover
+							color: $accent
+
+.top
+	bottom: $gutter
+	right: $gutter
+	width: 50px
+	height: 50px
+	color: $accent
+	text-align: center
+	line-height: 50px
+	position: fixed
+
+.mPS2id-highlight
+	background-color: $accent
+.top
+	.mPS2id-highlight
+		display: none
+		background-color: transparent
+
+
+					
+
+			
+// Custom Sass End
+
+@import "media" // Always at the end
