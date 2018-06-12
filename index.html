@@ -28,6 +28,25 @@
 
 	<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript">
     </script>
+    <script type="text/javascript">
+        ymaps.ready(init);
+        var myMap, 
+            myPlacemark;
+
+        function init(){ 
+            myMap = new ymaps.Map("map", {
+                center: [55.76, 37.64],
+                zoom: 7
+            }); 
+            
+            myPlacemark = new ymaps.Placemark([55.76, 37.64], {
+                hintContent: 'Москва!',
+                balloonContent: 'Столица России'
+            });
+            
+            myMap.geoObjects.add(myPlacemark);
+        }
+    </script>
 
 
 </head>
@@ -676,9 +695,8 @@
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col">
-					<div id="map"></div>
-					<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyASNu2wDZGAfp6rpvL53UfFJywBBZSs7lk&callback=initMap">
-    				</script>
+					<div id="map" style="width: 600px; height: 400px"></div>
+					
 					<div class="row">
 						<div class="col-3 map-cont">
 							<div class="map-cont-heading">

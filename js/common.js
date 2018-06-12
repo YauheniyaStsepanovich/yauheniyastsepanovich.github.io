@@ -12,16 +12,7 @@ $(function() {
 
 });
 
-	  // Initialize and add the map
-function initMap() {
-  // The location of Uluru
-  var uluru = {lat: 53.866377, lng: 27.509701};
-  // The map, centered at Uluru
-  var map = new google.maps.Map(
-      document.getElementById('map'), {zoom: 14, center: uluru});
-  // The marker, positioned at Uluru
-  var marker = new google.maps.Marker({position: uluru, map: map});
-}
+
 
 
 $(document).ready(function() {
@@ -74,20 +65,3 @@ $(".loaderInner").fadeOut();
 $(".loader").delay(400).fadeOut("slow");
 });
 
-ymaps.ready(init);
-    var myMap,
-        myPlacemark;
-
-    function init(){     
-        myMap = new ymaps.Map("map", {
-            center: [55.76, 37.64],
-            zoom: 7
-        });
-
-        myPlacemark = new ymaps.Placemark([55.76, 37.64], { 
-            hintContent: 'Москва!', 
-            balloonContent: 'Столица России' 
-        });
-
-        myMap.geoObjects.add(myPlacemark);
-    }
